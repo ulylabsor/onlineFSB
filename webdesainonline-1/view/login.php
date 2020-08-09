@@ -1,3 +1,8 @@
+    <?php
+      if (!empty($_SESSION['User'])) {
+         header("Location: index.php");
+      }
+      ?>
     <!-- layanan yes -->
     <section class="layanan-yes">
        <div class="container">

@@ -1,6 +1,17 @@
 <?php
 session_start();
 include '../koneksi/conn.php';
+include '../function/load-function.php';
+include 'model/model_users.php';
+
+if (empty($_SESSION['User'])) {
+   header("Location: ../index.php");
+} else {
+   if ($_SESSION['Level'] <> 'Admin') {
+      header("Location: ../index.php");
+   }
+}
+
 ?>
 <!doctype html>
 <html lang="en">

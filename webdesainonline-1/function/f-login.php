@@ -10,7 +10,7 @@ function cekLogin($user, $pass)
    $cekData = mysqli_num_rows($query);
 
    if ($cekData > 0) {
-      if ($data['password'] == $pass) {
+      if ($data['password'] == md5($pass)) {
          if ($data['status'] == 'Aktif') {
 
             //BIKIN SESSION
@@ -19,6 +19,8 @@ function cekLogin($user, $pass)
             $_SESSION['Email']  = $data['email'];
             $_SESSION['Level']  = $data['level'];
             $_SESSION['Status'] = $data['status'];
+
+            mysqli_query($koneksi, "UPDATE users SET login_at = CURRENT_TIMESTAMP() WHERE id_user = '$data[id_user]'");
             if ($data['level'] == 'Customer') {
                header("Location: index.php");
             } else {
