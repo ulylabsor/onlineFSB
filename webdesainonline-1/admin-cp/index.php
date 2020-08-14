@@ -2,7 +2,7 @@
 session_start();
 include '../koneksi/conn.php';
 include '../function/load-function.php';
-include 'model/model_users.php';
+include 'model/model.php';
 
 if (empty($_SESSION['User'])) {
    header("Location: ../index.php");
