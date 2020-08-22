@@ -41,3 +41,19 @@ function time_elapsed($datetime, $full = false)
    if (!$full) $string = array_slice($string, 0, 1);
    return $string ? implode(', ', $string) . ' ago' : 'never';
 }
+
+
+function noResi($length = 8)
+{
+   $genid = "";
+   $possible = "RES1234567890";
+   $i = 0;
+   while ($i < $length) {
+      $char = substr($possible, mt_rand(0, strlen($possible) - 1), 1);
+      if (!strstr($genid, $char)) {
+         $genid .= $char;
+         $i++;
+      }
+   }
+   return $genid;
+}

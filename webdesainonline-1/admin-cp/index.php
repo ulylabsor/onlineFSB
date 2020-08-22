@@ -7,7 +7,7 @@ include 'model/model.php';
 if (empty($_SESSION['User'])) {
    header("Location: ../index.php");
 } else {
-   if ($_SESSION['Level'] <> 'Admin') {
+   if ($_SESSION['Level'] == 'Customer') {
       header("Location: ../index.php");
    }
 }
