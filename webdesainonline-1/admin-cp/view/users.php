@@ -1,10 +1,14 @@
 <h2 class="mt-3">Data Users &nbsp;&nbsp;
-   <a href="?page=add-users" class="btn btn-info">Tambah Data</a>
+   <?php
+   if ($_SESSION['Level'] == 'Administrator') : ?>
+      <a href="?page=add-users" class="btn btn-info">Tambah Data</a>
+   <?PHP endif; ?>
+
 </h2>
 <?= isset($_SESSION['notif']) ? $_SESSION['notif'] : '';
 unset($_SESSION['notif']);
 ?>
-<table class="table table-striped">
+<table class="table table-striped" id="tabel-saya">
    <thead>
       <tr>
          <th scope="col">#</th>

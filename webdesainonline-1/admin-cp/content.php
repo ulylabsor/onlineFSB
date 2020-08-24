@@ -63,9 +63,15 @@ if ($_SESSION['Level'] == 'Admin') {
       case 'status':
          include 'view/status.php';
          break;
+      case 'edit-status':
+         include 'view/edit/edit-status.php';
+         break;
 
       case 'act-logout':
          include 'modul/act-logout.php';
+         break;
+      case 'act-status':
+         include 'modul/act-status.php';
          break;
 
       default:
@@ -79,6 +85,9 @@ if ($_SESSION['Level'] == 'Admin') {
          break;
       case 'home':
          include 'view/home.php';
+         break;
+      case 'laporan':
+         include 'view/laporan.php';
          break;
 
       case 'act-logout':

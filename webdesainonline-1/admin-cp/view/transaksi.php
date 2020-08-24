@@ -1,10 +1,14 @@
 <h2 class="mt-3">Data Transaksi Pengiriman Barang &nbsp;&nbsp;
-   <a href="?page=add-transaksi" class="btn btn-info">Tambah Data</a>
+   <?PHP if ($_SESSION['Level'] == 'Administrator') : ?>
+      <a href="?page=add-transaksi" class="btn btn-info">Tambah Data</a>
+   <?PHP else : ?>
+      <a href="laporan/laporan-transaksi.php" target="_blank" class="btn btn-info">Cetak</a>
+   <?php endif; ?>
 </h2>
 <?= isset($_SESSION['notif']) ? $_SESSION['notif'] : '';
 unset($_SESSION['notif']);
 ?>
-<table class="table table-striped">
+<table class="table table-striped" id="tabel-saya">
    <thead>
       <tr>
          <th scope="col">#</th>

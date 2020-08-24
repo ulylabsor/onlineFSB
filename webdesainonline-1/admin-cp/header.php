@@ -18,6 +18,7 @@
             <a class="nav-item nav-link" href="?page=act-logout">Logout</a>
          <?php elseif ($_SESSION['Level'] == 'Manager') : ?>
             <a class="nav-item nav-link <?= isset($_GET['page']) ? $_GET['page'] == 'home' ? 'active' : '' : 'active' ?>" href="?page=home">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link <?= isset($_GET['page']) ? $_GET['page'] == 'laporan' ? 'active' : '' : '' ?>" href="?page=laporan">Laporan</a>
             <a class="nav-item nav-link" href="?page=act-logout">Logout</a>
          <?php endif ?>
       </div>

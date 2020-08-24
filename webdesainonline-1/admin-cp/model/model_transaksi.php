@@ -12,6 +12,16 @@ function getTransaksi()
    return $transaksi;
 }
 
+function getTransaksiById($noResi)
+{
+   global $koneksi;
+   $sql = "SELECT * FROM transaksi inner join tracking_history on transaksi.no_resi=tracking_history.no_resi WHERE transaksi.no_resi = '$noResi'";
+   $query  = mysqli_query($koneksi, $sql) or die(mysqli_error($koneksi));
+   $data = mysqli_fetch_assoc($query);
+
+   return $data;
+}
+
 function addTransaksi($data)
 {
    global $koneksi;
